@@ -1,21 +1,10 @@
-/* =========================================================
-   PÁGINA NOSSA — JAVASCRIPT
-   ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
-       CONFIGURAÇÃO
-    ===================================================== */
-
-    // Coloque o número do WhatsApp com 55 + DDD + número.
-    // Exemplo: 5511999999999
-    const WHATSAPP_NUMBER = "5511999999999";
+    const WHATSAPP_NUMBER = "5511965430833";
 
 
-    /* =====================================================
-       FUNÇÃO — ABRIR WHATSAPP
-    ===================================================== */
+    
 
     function abrirWhatsApp(mensagem) {
 
@@ -32,9 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       FUNÇÃO — MOSTRAR MENSAGEM
-    ===================================================== */
+   
 
     function mostrarMensagem(elemento, texto, tipo = "") {
 
@@ -50,10 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       CARROSSEL DE FOTOS
-    ===================================================== */
-
+    
     const carousel = document.getElementById("hero-carousel");
     const carouselImage = document.getElementById("hero-carousel-image");
 
@@ -157,10 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       CRIAR BOLINHAS
-    ===================================================== */
-
+ 
     function criarBolinhas() {
 
         if (!carouselDots) return;
@@ -203,9 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       ATUALIZAR BOLINHAS
-    ===================================================== */
+   
 
     function atualizarBolinhas() {
 
@@ -228,9 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       PRÓXIMA FOTO
-    ===================================================== */
+   
 
     function proximaFoto() {
 
@@ -240,9 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       FOTO ANTERIOR
-    ===================================================== */
+    
 
     function fotoAnterior() {
 
@@ -252,9 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       INICIAR CARROSSEL AUTOMÁTICO
-    ===================================================== */
+
 
     function iniciarCarrossel() {
 
@@ -269,9 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       REINICIAR CARROSSEL
-    ===================================================== */
+  
 
     function reiniciarCarrossel() {
 
@@ -279,10 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       CONFIGURAR CARROSSEL
-    ===================================================== */
-
+    
     if (carousel && carouselImage) {
 
         criarBolinhas();
@@ -310,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        /* BOTÃO ANTERIOR */
+        
 
         carouselPrev?.addEventListener(
             "click",
@@ -325,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        /* PAUSAR AO PASSAR O MOUSE */
+        
 
         carousel.addEventListener(
             "mouseenter",
@@ -338,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        /* VOLTAR A RODAR */
+        
 
         carousel.addEventListener(
             "mouseleave",
@@ -349,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        /* CONTROLE PELO TECLADO */
+        
 
         carousel.addEventListener(
             "keydown",
@@ -374,9 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       RECADOS → WHATSAPP
-    ===================================================== */
+   
 
     const noteTitle =
         document.getElementById("note-title");
@@ -406,7 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 noteText?.value.trim() || "";
 
 
-            /* VERIFICAR RECADOS */
+           
 
             if (!recado) {
 
@@ -422,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            /* MONTAR MENSAGEM */
+            
 
             const mensagem =
 `💌 *RECADO PARA NÓS*
@@ -432,7 +398,7 @@ ${titulo ? `*${titulo}*\n\n` : ""}${recado}
 Feito com carinho. ❤️`;
 
 
-            /* ABRIR WHATSAPP */
+            
 
             abrirWhatsApp(mensagem);
 
@@ -446,9 +412,7 @@ Feito com carinho. ❤️`;
     );
 
 
-    /* =====================================================
-       CAMPOS DO DATE
-    ===================================================== */
+    
 
     const dateTitle =
         document.getElementById("date-title");
@@ -481,9 +445,7 @@ Feito com carinho. ❤️`;
         );
 
 
-    /* =====================================================
-       DATE → WHATSAPP
-    ===================================================== */
+   
 
     sendDateButton?.addEventListener(
         "click",
@@ -505,7 +467,7 @@ Feito com carinho. ❤️`;
                 dateLocation?.value.trim() || "";
 
 
-            /* VERIFICAR TÍTULO */
+            
 
             if (!titulo) {
 
@@ -521,14 +483,13 @@ Feito com carinho. ❤️`;
             }
 
 
-            /* FORMATAR DATA */
+            
 
             const dataFormatada =
                 formatarData(data);
 
 
-            /* MONTAR MENSAGEM */
-
+            
             const mensagem =
 `🧡 *IDEIA DE DATE*
 
@@ -553,9 +514,7 @@ Vamos marcar? 🥰`;
     );
 
 
-    /* =====================================================
-       DATE → GOOGLE AGENDA
-    ===================================================== */
+    
 
     const calendarButton =
         document.getElementById(
@@ -583,7 +542,7 @@ Vamos marcar? 🥰`;
                 dateLocation?.value.trim() || "";
 
 
-            /* VERIFICAR TÍTULO */
+            
 
             if (!titulo) {
 
@@ -599,7 +558,7 @@ Vamos marcar? 🥰`;
             }
 
 
-            /* VERIFICAR DATA */
+          
 
             if (!data) {
 
@@ -615,7 +574,7 @@ Vamos marcar? 🥰`;
             }
 
 
-            /* CRIAR DATA */
+            
 
             const inicio =
                 criarDataGoogle(
@@ -636,10 +595,7 @@ Vamos marcar? 🥰`;
             }
 
 
-            /*
-               O encontro terá duração
-               de 2 horas.
-            */
+           
 
             const fim =
                 new Date(
@@ -659,7 +615,7 @@ Vamos marcar? 🥰`;
                 );
 
 
-            /* CRIAR LINK */
+            
 
             const parametros =
                 new URLSearchParams({
@@ -698,10 +654,7 @@ Vamos marcar? 🥰`;
     );
 
 
-    /* =====================================================
-       FORMATAR DATA
-    ===================================================== */
-
+    
     function formatarData(dataISO) {
 
         if (!dataISO) return "";
@@ -721,9 +674,7 @@ Vamos marcar? 🥰`;
     }
 
 
-    /* =====================================================
-       CRIAR DATA
-    ===================================================== */
+    
 
     function criarDataGoogle(
         data,
@@ -783,10 +734,7 @@ Vamos marcar? 🥰`;
     }
 
 
-    /* =====================================================
-       FORMATO DO GOOGLE AGENDA
-    ===================================================== */
-
+    
     function formatarDataGoogle(data) {
 
         const ano =
@@ -822,9 +770,7 @@ Vamos marcar? 🥰`;
     }
 
 
-    /* =====================================================
-       ANIMAÇÃO DAS SEÇÕES
-    ===================================================== */
+  
 
     const secoes =
         document.querySelectorAll(
@@ -884,9 +830,7 @@ Vamos marcar? 🥰`;
     }
 
 
-    /* =====================================================
-       MENSAGEM NO CONSOLE
-    ===================================================== */
+    
 
     console.log(
         "💗 Página carregada com sucesso!"
