@@ -1,24 +1,51 @@
+const usuario = sessionStorage.getItem("usuarioLogado");
+
+const mensagemUsuario = document.getElementById("mensagem-usuario");
+
+if (usuario === "lala") {
+    mensagemUsuario.textContent = "Bem-vinda, LaLa! ❤️";
+}
+
+if (usuario === "isa") {
+    mensagemUsuario.textContent = "Bem-vinda, Isa! ❤️";
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const WHATSAPP_NUMBER = "5511965430833";
+    const NUMERO_ISA = "5511965430833";
+    const NUMERO_LALA = "5511971596380";
 
-
-    
 
     function abrirWhatsApp(mensagem) {
 
-        if (!WHATSAPP_NUMBER || WHATSAPP_NUMBER === "5511999999999") {
-            alert("Configure o número do WhatsApp no arquivo script.js.");
-            return;
-        }
+    let numeroDestino = "";
 
-        const texto = encodeURIComponent(mensagem);
+    if (usuarioAtual === "lala") {
 
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`;
+        numeroDestino = NUMERO_ISA;
 
-        window.open(url, "_blank");
     }
+    else if (usuarioAtual === "isa") {
+
+        numeroDestino = NUMERO_LALA;
+
+    }
+
+    else {
+
+        alert("Não foi possível identificar quem está usando a página.");
+        return;
+
+    }
+
+    const texto = encodeURIComponent(mensagem);
+
+    const url =
+        `https://wa.me/${numeroDestino}?text=${texto}`;
+
+    window.open(url, "_blank");
+}
 
 
    
@@ -837,3 +864,25 @@ Vamos marcar? 🥰`;
     );
 
 });
+
+
+
+const usuarioAtual = sessionStorage.getItem("usuarioLogado");
+
+const mensagemusuario = document.getElementById("mensagem-usuario");
+
+if (mensagemusuario) {
+
+    if (usuarioAtual === "lala") {
+
+        mensagemusuario.textContent =
+            "Oi, Lays! o seu sorriso é o mais lindo que ja vi🙈";
+
+    } else if (usuarioAtual === "isa") {
+
+        mensagemusuario.textContent =
+            "Oi, Isa! você é a neguinha mais descolada, estilosa e gostosona.";
+
+    }
+
+}

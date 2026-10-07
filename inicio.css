@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.login-container {
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+
+
+}
+
+.login-card {
+
+    width: 100%;
+    max-width: 440px;
+    padding: 48px 36px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 28px;
+    box-shadow:
+
+        0 20px 50px
+        rgba(0, 0, 0, 0.25);
+
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.login-heart {
+
+    font-size: 48px;
+
+    margin-bottom: 15px;
+}
+
+
+.login-card h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 40px;
+
+    color: #ffad82;
+
+    margin-bottom: 10px;
+}
+
+
+.login-subtitle {
+
+    color: #e9a7b8;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+
+    line-height: 1.5;
+}
+
+
+.login-card h2 {
+
+    font-size: 17px;
+
+    color: #ff7f32;
+
+    margin-bottom: 18px;
+}
+
+
+.user-options {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+.user-button {
+
+    flex: 1;
+    padding: 13px;
+    background: #fff8fa;
+    border: 1px solid #efccd7;
+    border-radius: 13px;
+    color: #d8a5b2;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.user-button:hover {
+
+    background: #fff0f4;
+
+    transform: translateY(-2px);
+}
+
+
+.user-button.selected {
+
+    background: #ffe1eb;
+    border-color: #ff9fbd;
+    color: #e76b91;
+}
+
+
+.form-group {
+
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.form-group input {
+
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #efccd7;
+    border-radius: 13px;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    background: #fffafa;
+}
+
+
+.form-group input:focus {
+
+    border-color: #ff9fbd;
+    box-shadow:
+
+        0 0 0 3px
+        rgba(255, 159, 189, 0.15);
+}
+
+
+.btn-login {
+
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 13px;
+    background: #ffad82;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.btn-login:hover {
+
+    background: #ff9868;
+    transform: translateY(-2px);
+}
+
+
+.btn-login:active {
+
+    transform: translateY(0);
+}
+
+
+.btn-login:disabled {
+
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+.login-message {
+
+    min-height: 20px;
+    margin-top: 14px;
+    color: #e76b91;
+    font-size: 13px;
+}
+
+
+
+
+.logo {
+
+    margin-top: 20px;
+}
+
+
+.logo img {
+
+    max-width: 280px;
+
+    width: 100%;
+
+    height: auto;
+}
+
+.decoracoes-pagina {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.raminho {
+
+    position: absolute;
+    width: 120px;
+    height: auto;
+    opacity: 0.65;
+}
+
+
+.raminho-1 {
+
+    top: 5%;
+    left: 3%;
+    transform: rotate(-20deg);
+}
+
+
+.raminho-2 {
+    top: 35%;
+    left: -20px;
+    transform: rotate(15deg);
+}
+
+
+.raminho-3 {
+
+    bottom: 5%;
+
+    left: 3%;
+
+    transform: rotate(-10deg);
+}
+
+
+.raminho-4 {
+
+    top: 5%;
+
+    right: 3%;
+
+    transform: rotate(20deg);
+}
+
+
+.raminho-5 {
+
+    top: 40%;
+
+    right: -20px;
+
+    transform: rotate(-15deg);
+}
+
+
+.raminho-6 {
+
+    bottom: 5%;
+
+    right: 3%;
+
+    transform: rotate(10deg);
+}
+
+
+.raminho-7 {
+
+    top: 20%;
+
+    left: 12%;
+
+    width: 80px;
+
+    opacity: 0.35;
+}
+
+
+.raminho-8 {
+
+    bottom: 15%;
+
+    right: 12%;
+
+    width: 80px;
+
+    opacity: 0.35;
+}
+
+
+.raminho-9 {
+
+    top: 70%;
+
+    left: 8%;
+
+    width: 70px;
+
+    opacity: 0.30;
+}
+
+
+/* =====================================================
+   CELULAR
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .login-container {
+
+        padding: 20px;
+    }
+
+
+    .login-card {
+
+        padding: 40px 24px;
+    }
+
+
+    .login-card h1 {
+
+        font-size: 34px;
+    }
+
+
+    .login-heart {
+
+        font-size: 42px;
+    }
+
+
+    .user-options {
+
+        gap: 8px;
+    }
+
+
+    .raminho {
+
+        width: 80px;
+    }
+
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    color: var(--texto);
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(2, 5, 10, 0.95),
+            rgba(5, 15, 30, 0.75),
+            rgba(15, 7, 2, 0.88)
+        ),
+
+        url("imagens/por-do-sol.webp");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+}
+
+
+/* Mensagem personalizada de boas-vindas */
+#mensagem-usuario {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    color: #e88b73;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 1.5;
+
+    /* Animação de entrada */
+    opacity: 0;
+    transform: translateY(15px);
+    animation: aparecerMensagem 1s ease forwards;
+}
+
+/* Animação suave */
+@keyframes aparecerMensagem {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste para celular */
+@media (max-width: 600px) {
+    #mensagem-usuario {
+        font-size: 23px;
+        margin: 15px;
+    }
+}

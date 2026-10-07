@@ -1,162 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Página nossa</title>
-
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>inicio da pagina❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inicio.css">
     <link rel="icon" type="image/png" href="imagens/logo 01.png">
 
 </head>
 
+
 <body>
 
+    <main class="login-container">
 
-    <header class="hero">
-        <div class="hero-content">
+        <section class="login-card">
+
+            <div class="login-heart">
+                🙈
+            </div>
+
+            <h1>LaLa & Isa</h1>
+
+
             
-            <h1 class="couple-names">𝙻𝚊𝙻𝚊 &amp; 𝙸𝚜𝚊</h1>
-
-            <p class="romantic-phrase">
-                𝑪𝒂𝒅𝒂 𝒎𝒐𝒎𝒆𝒏𝒕𝒐 𝒒𝒖𝒆 𝒒𝒖𝒆𝒓𝒐 𝒕𝒆𝒓 𝒄𝒐𝒎 𝒗𝒐𝒄𝒆̂
+            <p class="login-subtitle">
+                o laranja do por do sol é lindo, quer ver?.
             </p>
-        </div>
 
-        <div class="hero-image">
-            <div class="hero-carousel"id="hero-carousel"tabindex="0"aria-label="Carrossel de fotos de LaLa e Isa" >
 
-                <img id="hero-carousel-image"class="hero-carousel-image"src="imagens/laranja 2.jpeg"alt="Foto de LaLa e Isa">
+            
+            <h2>Quem está entrando?</h2>
 
-                <div class="hero-carousel-overlay"></div>
+            <div class="user-options">
 
-                <button class="hero-carousel-btn hero-carousel-prev"id="hero-carousel-prev"type="button"aria-label="Ver foto anterior">
-                    <i class="fa-solid fa-chevron-left"></i>
+
+                
+                <button type="button"class="user-button"id="btn-lala"data-user="lala">
+                    💕 LaLa
                 </button>
 
-                <button class="hero-carousel-btn hero-carousel-next"id="hero-carousel-next"type="button"aria-label="Ver próxima foto">
-                    <i class="fa-solid fa-chevron-right"></i>
+
+               
+                <button type="button"class="user-button"id="btn-isa"data-user="isa">
+                    💗 Isa
                 </button>
 
-                
-                <div class="hero-carousel-dots"id="hero-carousel-dots"aria-label="Escolher foto"></div>
-
-                <p class="hero-carousel-caption"id="hero-carousel-caption">
-                    Nossos momentos favoritos ❤️
-                </p>
-            </div>
-        </div>
-    </header>
-
-  
-    <main class="container">
-
-        
-        <section class="section-notes">
-            <h2>
-                <i class="fa-solid fa-heart"></i>
-                Recados para nós
-            </h2>
-
-            <div class="content-card">
-                <p class="section-description">
-                    Escreve um recado e manda direto no meu zap 9vinha. 💗
-                </p>
-
-                <div class="form-group">
-                    <label for="note-title">Título do recado</label>
-
-                    <input type="text"id="note-title"maxlength="70"placeholder="Ex.: Para você, benzin...">
-                </div>
-
-                
-                <div class="form-group">
-                    <label for="note-text">Seu recado</label>
-
-                    <textarea id="note-text"rows="6"placeholder="Escreve aqui o que quiser dizer..."></textarea>
-                </div>
-
-                
-                <button class="btn-primary full-width-btn"id="btn-send-note-whatsapp"type="button">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    Mandar recado no WhatsApp
-                </button>
-
-                
-                <p class="form-message"id="note-message"aria-live="polite"></p>
-            </div>
-        </section>
-
-       
-        <section class="section-date-ideas">
-            <h2>
-                <i class="fa-solid fa-calendar-heart"></i>
-                Vamos marcar de se vê e ficar juntas ou você me odeia? 
-            </h2>
-
-            <div class="content-card">
-                <p class="section-description">
-                    Conta a ideia, escolhe quando e onde. Depois manda no WhatsApp ou coloca na agenda. 🧡
-                </p>
-
-                
-                <div class="form-group">
-                    <label for="date-title">Ideia do encontro</label>
-
-                    <input type="text"id="date-title"maxlength="80"placeholder="Ex.: Jantar, cinema, passeio, noite de jogos...">
-                </div>
-
-                
-                <div class="form-group">
-                    <label for="date-description">Detalhes</label>
-
-                    <textarea id="date-description"rows="4"placeholder="Ex.: Fazer pipoca, escolher restaurante, levar cobertor..."></textarea>
-                </div>
-
-                
-                <div class="date-form-row">
-                    <div class="form-group">
-                        <label for="date-day">Data</label>
-                        <input type="date" id="date-day">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="date-time">Horário</label>
-                        
-                        <input type="time"id="date-time"value="20:00">
-                    </div>
-                </div>
-
-                <div class="form-group">
-
-    <label for="date-location">Local</label>
-
-    <input type="text"id="date-location"maxlength="100"placeholder="Ex.: Em casa, parque, restaurante...">
-
-</div>
-
-<div class="date-actions">
-
-    <button class="btn-primary"id="btn-send-date-whatsapp"type="button">
-        <i class="fa-brands fa-whatsapp"></i>
-        Mandar no WhatsApp
-    </button>
-
-    <button class="btn-secondary"id="btn-add-date-calendar"type="button">
-        <i class="fa-regular fa-calendar-plus"></i>
-        Abrir Agenda
-    </button>
-
-</div>
-
-                
-                <p class="form-message"id="date-message"aria-live="polite"></p>
 
             </div>
+
+            <div class="form-group">
+
+                <label for="senha">
+                    senha
+                </label>
+
+
+                <input type="password"id="senha"placeholder="Digite a senha"autocomplete="off">
+
+
+            </div>
+
+            <button type="button"class="btn-login"id="btn-login">
+                Entrar na pagina ❤️
+            </button>
+
+            <p class="login-message"id="login-message"aria-live="polite"></p>
+
+                 </div>
 
             <div class="logo">
                 <img src="imagens/laranja.png" alt="lays & isa">
@@ -184,11 +98,15 @@
 
 </div>
 
-    
-    <footer>
-        <p>Feito para te impressionar né. </p>
-    </footer>
 
-    <script src="script.js"></script>
+        </section>
+
+
+    </main>
+    <script src="login.js"></script>
+
+
 </body>
+
 </html>
+
