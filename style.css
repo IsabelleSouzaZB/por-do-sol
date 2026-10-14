@@ -606,3 +606,158 @@ footer {
         animation-duration: 0.01ms !important;
     }
 }
+
+.content-card {
+    width: 100%;
+    max-width: 700px;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.content-card *,
+.content-card *::before,
+.content-card *::after {
+    box-sizing: border-box;
+}
+
+/* Campos do formulário */
+.form-group {
+    width: 100%;
+    min-width: 0;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.date-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+}
+
+.date-form-row .form-group {
+    min-width: 0;
+    width: 100%;
+}
+
+.date-form-row input {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.date-form-row .form-group {
+    width: 100%;
+    min-width: 0;
+}
+
+.date-form-row input[type="date"],
+.date-form-row input[type="time"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botões de ação */
+.date-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+}
+
+.date-actions button,
+.date-actions .btn-primary,
+.date-actions .btn-secondary {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    flex: 0 0 auto;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+@media (max-width: 420px) {
+    .container {
+        padding: 24px 12px;
+    }
+
+    .content-card {
+        padding: 20px 16px;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .date-actions {
+        gap: 10px;
+    }
+
+    .date-actions button {
+        min-height: 48px;
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    
+    .date-form-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .content-card {
+        width: 100%;
+        min-width: 0;
+        padding: 20px 16px;
+    }
+
+    .form-group {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .date-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .date-actions button {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        flex: none;
+        min-height: 48px;
+    }
+
+}
