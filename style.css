@@ -8,6 +8,8 @@
     --color-pink-light: #FFD4E5;
     --color-gray-med: #CFCFCF;
 
+    --texto: #444;
+
     --font-main: "Montserrat", sans-serif;
     --font-display: "Playfair Display", serif;
 
@@ -25,20 +27,39 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     min-height: 100vh;
-    color: #444;
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.96),
-            rgba(255, 212, 229, 0.30)
-        );
-    background-color: var(--color-gray-light);
+    min-height: 100dvh;
+    overflow-x: hidden;
+    color: var(--texto);
+    background-color: #05090f;
     font-family: var(--font-main);
     line-height: 1.6;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(2, 5, 10, 0.95),
+            rgba(5, 15, 30, 0.75),
+            rgba(15, 7, 2, 0.88)
+        ),
+        url("imagens/por-do-sol.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+img {
+    max-width: 100%;
 }
 
 button,
@@ -65,18 +86,16 @@ h2 {
     margin-bottom: 22px;
     color: var(--color-orange);
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 4vw, 2.25rem);
+    font-size: clamp(1.6rem, 5vw, 2.25rem);
     line-height: 1.2;
     text-align: center;
+    overflow-wrap: break-word;
 }
 
 h2 i {
     margin-right: 8px;
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
 
 .hero {
     padding: 58px 20px 46px;
@@ -101,8 +120,9 @@ h2 i {
     margin-bottom: 10px;
     color: var(--color-pink);
     font-family: var(--font-display);
-    font-size: clamp(2.6rem, 8vw, 4.2rem);
+    font-size: clamp(2.2rem, 9vw, 4.2rem);
     line-height: 1.1;
+    overflow-wrap: break-word;
 }
 
 .romantic-phrase {
@@ -111,9 +131,6 @@ h2 i {
     font-style: italic;
 }
 
-/* =========================================================
-   CARROSSEL
-   ========================================================= */
 
 .hero-image {
     max-width: 760px;
@@ -126,7 +143,9 @@ h2 i {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 460px;
+    height: clamp(320px, 95vw, 460px);
+    max-height: 80vh;
+    max-height: 80svh;
     overflow: hidden;
     border-radius: var(--radius);
     outline: none;
@@ -138,6 +157,7 @@ h2 i {
         );
     box-shadow: var(--shadow-hover);
     cursor: pointer;
+    touch-action: pan-y;
 }
 
 .hero-carousel-image {
@@ -169,20 +189,20 @@ h2 i {
             rgba(0, 0, 0, 0.08) 100%
         );
 }
-
+*/
 .hero-carousel-btn {
     position: absolute;
     top: 50%;
     z-index: 2;
-    width: 43px;
-    height: 43px;
+    width: 44px;
+    height: 44px;
     border: 0;
     border-radius: 50%;
     color: var(--color-white);
     background-color: rgba(255, 95, 162, 0.82);
     cursor: pointer;
     font-size: 1rem;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(-50%);
     transition:
         opacity 0.25s ease,
@@ -190,27 +210,17 @@ h2 i {
         transform 0.25s ease;
 }
 
-.hero-carousel:hover .hero-carousel-btn,
-.hero-carousel:focus-within .hero-carousel-btn {
-    opacity: 1;
-}
-
-.hero-carousel-btn:hover {
-    background-color: var(--color-orange);
-    transform: translateY(-50%) scale(1.08);
-}
-
 .hero-carousel-prev {
-    left: 16px;
+    left: 12px;
 }
 
 .hero-carousel-next {
-    right: 16px;
+    right: 12px;
 }
 
 .hero-carousel-dots {
     position: absolute;
-    bottom: 16px;
+    bottom: 42px;
     left: 50%;
     z-index: 2;
     display: flex;
@@ -237,14 +247,17 @@ h2 i {
 
 .hero-carousel-caption {
     position: absolute;
-    bottom: 14px;
-    left: 20px;
+    bottom: 12px;
+    left: 16px;
+    right: 16px;
     z-index: 2;
-    max-width: calc(100% - 150px);
+    overflow: hidden;
     color: var(--color-white);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
@@ -266,6 +279,7 @@ h2 i {
 }
 
 .form-group {
+    min-width: 0;
     margin-bottom: 18px;
 }
 
@@ -279,18 +293,26 @@ h2 i {
 
 .form-group input,
 .form-group textarea {
+    display: block;
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
     border: 1px solid var(--color-gray-med);
     border-radius: 12px;
     outline: none;
     padding: 13px 14px;
     color: #444;
     background-color: var(--color-gray-light);
-    font-size: 0.95rem;
+    font-size: 1rem;
     transition:
         border-color 0.25s ease,
         box-shadow 0.25s ease,
         background-color 0.25s ease;
+}
+
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    min-height: 48px;
 }
 
 .form-group textarea {
@@ -307,18 +329,20 @@ h2 i {
 
 .date-form-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0 16px;
 }
+
 
 .date-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
     margin-top: 6px;
 }
 
 .date-actions button {
-    flex: 1;
+    flex: 1 1 200px;
 }
 
 .form-message {
@@ -337,10 +361,9 @@ h2 i {
     color: #c03455;
 }
 
-
-
 .btn-primary,
 .btn-secondary {
+    min-height: 48px;
     border: 0;
     border-radius: 999px;
     padding: 13px 25px;
@@ -364,28 +387,43 @@ h2 i {
     box-shadow: 0 4px 15px rgba(255, 95, 162, 0.30);
 }
 
-.btn-primary:hover {
-    box-shadow: 0 8px 22px rgba(255, 95, 162, 0.42);
-    transform: translateY(-2px);
-}
-
 .btn-secondary {
     color: var(--color-white);
     background-color: var(--color-coral);
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-pink);
-    transform: translateY(-2px);
 }
 
 .full-width-btn {
     width: 100%;
 }
 
-/* =========================================================
-   LOGO
-   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .hero-carousel-btn {
+        opacity: 0;
+    }
+
+    .hero-carousel:hover .hero-carousel-btn,
+    .hero-carousel:focus-within .hero-carousel-btn {
+        opacity: 1;
+    }
+
+    .hero-carousel-btn:hover {
+        background-color: var(--color-orange);
+        transform: translateY(-50%) scale(1.08);
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 8px 22px rgba(255, 95, 162, 0.42);
+        transform: translateY(-2px);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--color-pink);
+        transform: translateY(-2px);
+    }
+}
+
 
 .logo {
     margin-top: 40px;
@@ -401,9 +439,6 @@ h2 i {
     margin: 0 auto;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
 
 footer {
     padding: 38px 20px;
@@ -412,9 +447,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* =========================================================
-   ANIMAÇÃO DAS SEÇÕES
-   ========================================================= */
 
 .section-hidden {
     opacity: 0;
@@ -429,199 +461,84 @@ footer {
         transform 0.7s ease;
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .container {
-        padding: 36px 16px;
-    }
-
-    .hero {
-        padding: 46px 16px 36px;
-    }
-
-    .hero-carousel {
-        height: 420px;
-    }
-
-    .hero-carousel-btn {
-        width: 38px;
-        height: 38px;
-        opacity: 1;
-    }
-
-    .hero-carousel-caption {
-        bottom: 12px;
-        left: 15px;
-        font-size: 0.8rem;
-    }
-
-    .hero-carousel-dots {
-        bottom: 12px;
-    }
-
-    .content-card {
-        padding: 22px 18px;
-    }
-
-    .date-form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .date-actions {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 420px) {
-
-    .hero-carousel {
-        height: 360px;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        padding: 12px 18px;
-        font-size: 0.9rem;
-    }
-
-    .couple-names {
-        font-size: 2.4rem;
-    }
-}
-
-
+ /*raminhos decorativos de fundo*/
 
 .decoracoes-pagina {
     position: fixed;
     inset: 0;
-
     z-index: 0;
-
     pointer-events: none;
     overflow: hidden;
 }
 
 .raminho {
     position: absolute;
-
-    width: 145px;
+    width: var(--w, 145px);
     height: auto;
-
     opacity: 0.18;
-
     mix-blend-mode: multiply;
-
-   
     filter:
         grayscale(100%)
         contrast(0.65)
         brightness(1.12);
-
     pointer-events: none;
 }
 
-
-
-
 .raminho-1 {
+    --w: 155px;
     top: -35px;
     left: -45px;
-
-    width: 155px;
-
     transform: rotate(-18deg);
 }
 
-
-
-
 .raminho-2 {
+    --w: 130px;
     top: 12%;
     right: -55px;
-
-    width: 130px;
-
     transform: rotate(25deg);
 }
 
-
-
-
 .raminho-3 {
+    --w: 120px;
     top: 32%;
     left: -55px;
-
-    width: 120px;
-
     transform: rotate(150deg);
 }
 
-
-
-
 .raminho-4 {
+    --w: 155px;
     right: -40px;
     bottom: 5%;
-
-    width: 155px;
-
     transform: rotate(160deg);
 }
 
-
-
-
 .raminho-5 {
+    --w: 135px;
     left: -55px;
     bottom: 12%;
-
-    width: 135px;
-
     transform: rotate(-35deg);
 }
 
-
-
-
 .raminho-6 {
+    --w: 115px;
     top: 52%;
     right: -65px;
-
-    width: 115px;
-
     transform: rotate(70deg);
 }
 
-
-
-
 .raminho-7 {
+    --w: 125px;
     left: 8%;
     bottom: -45px;
-
-    width: 125px;
-
     transform: rotate(20deg);
 }
 
-
-
 .raminho-8 {
+    --w: 105px;
     top: -45px;
     right: 15%;
-
-    width: 105px;
-
     transform: rotate(80deg);
 }
-
-
-
 
 main,
 header,
@@ -631,73 +548,61 @@ footer {
 }
 
 
+@media (max-width: 768px) {
 
-@media (max-width: 700px) {
+    .container {
+        padding: 36px 16px;
+    }
+
+    section {
+        margin-bottom: 44px;
+    }
+
+    .hero {
+        padding: 46px 16px 36px;
+    }
+
+    .content-card {
+        padding: 22px 18px;
+    }
 
     .raminho {
+        width: calc(var(--w, 145px) * 0.72);
         opacity: 0.13;
-    }
-
-    .raminho-1 {
-        width: 110px;
-    }
-
-    .raminho-2 {
-        width: 95px;
-    }
-
-    .raminho-3 {
-        width: 90px;
-    }
-
-    .raminho-4 {
-        width: 110px;
-    }
-
-    .raminho-5 {
-        width: 95px;
-    }
-
-    .raminho-6 {
-        width: 85px;
-    }
-
-    .raminho-7 {
-        width: 90px;
-    }
-
-    .raminho-8 {
-        width: 75px;
     }
 }
 
-body {
+@media (max-width: 420px) {
 
-    font-family: Arial, sans-serif;
+    .hero-carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
 
-    color: var(--texto);
+    .hero-carousel-prev {
+        left: 8px;
+    }
 
-    background-image:
+    .hero-carousel-next {
+        right: 8px;
+    }
 
-        linear-gradient(
-            90deg,
-            rgba(2, 5, 10, 0.95),
-            rgba(5, 15, 30, 0.75),
-            rgba(15, 7, 2, 0.88)
-        ),
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
 
-        url("imagens/por-do-sol.webp");
+    html {
+        scroll-behavior: auto;
+    }
 
-    background-size: cover;
-
-    background-position: center;
-
-    background-attachment: fixed;
-
-    background-repeat: no-repeat;
-
-    min-height: 100vh;
-
-    padding: 40px 20px;
-
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }

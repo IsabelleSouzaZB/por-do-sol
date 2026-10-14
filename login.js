@@ -65,7 +65,6 @@
         );
 
 
-        // Mensagem
         if (usuarioSelecionado === "lala") {
 
             mensagem.textContent =
@@ -78,8 +77,6 @@
 
         }
 
-
-        // Aguarda um pouquinho e abre a página principal
         setTimeout(function () {
 
             window.location.href = "inicio.html";

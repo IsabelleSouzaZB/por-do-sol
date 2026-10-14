@@ -290,8 +290,6 @@ document.addEventListener("DOMContentLoaded", () => {
         iniciarCarrossel();
 
 
-        /* BOTÃO PRÓXIMO */
-
         carouselNext?.addEventListener(
             "click",
             (evento) => {
