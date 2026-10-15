@@ -189,7 +189,7 @@ h2 i {
             rgba(0, 0, 0, 0.08) 100%
         );
 }
-*/
+
 .hero-carousel-btn {
     position: absolute;
     top: 50%;
@@ -622,7 +622,7 @@ footer {
     box-sizing: border-box;
 }
 
-/* Campos do formulário */
+/* Campo do formulário */
 .form-group {
     width: 100%;
     min-width: 0;
@@ -668,7 +668,6 @@ footer {
     box-sizing: border-box;
 }
 
-/* Botões de ação */
 .date-actions {
     display: flex;
     flex-direction: column;
@@ -760,4 +759,81 @@ footer {
         min-height: 48px;
     }
 
+}
+
+/* === RESPONSIVIDADE PARA CELULARES === */
+
+@media (max-width: 420px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    .container {
+        width: 100%;
+        min-width: 0;
+        padding: 24px 12px;
+    }
+
+    .content-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding: 18px 14px;
+    }
+
+    .form-group,
+    .date-form-row,
+    .date-form-row .form-group {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .date-form-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .date-form-row input[type="date"],
+    .date-form-row input[type="time"] {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 12px 8px;
+        font-size: 16px;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .date-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .date-actions button {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+    }
 }
